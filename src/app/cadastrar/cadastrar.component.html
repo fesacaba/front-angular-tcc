@@ -1,0 +1,55 @@
+<body class="back">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="p-4 p-sm-5">
+                <div style="margin-top: -20px; margin-left: -20px">
+                    <img src="assets/icon/arrow.svg" (click)="voltar()" width="30">
+                </div>
+                <h5 class="card-title text-center mb-5 fw-light fs-5" style="margin-top: 100px; font-weight: bold!important;">Preencha as informações<br> para efetuar o seu
+                    cadastro</h5>
+                <form [formGroup]="myControl">
+
+                    <div class="form-floating mb-3">
+                        <input formControlName="nome" style="border: none" name="nome" type="text"
+                               class="form-control" id="nome"
+                               placeholder="João da Silva">
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="email" style="border: none" name="email" type="email"
+                               class="form-control" id="email"
+                               placeholder="name@example.com">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="phone" style="border: none" name="phone" type="email"
+                               class="form-control" id="phone"
+                               placeholder="11 97599 6988">
+                        <label for="phone">Telefone</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="password" name="password" style="border: none" type="password"
+                               class="form-control"
+                               id="senha" placeholder="password">
+                        <label for="senha">Senha</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="rePassword" name="rePassword" style="border: none" type="password"
+                               class="form-control"
+                               id="rePassword" placeholder="rePassword">
+                        <label for="rePassword">Confirmar Senha</label>
+                    </div>
+                    <div class="d-grid" style="margin-top: 10px">
+                        <a>
+                            <button type="button" class="btn btn-dark col-12" (click)="enviar()"
+                                    style="height: 61px">Enviar
+                            </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

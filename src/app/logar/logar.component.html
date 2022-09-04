@@ -1,0 +1,39 @@
+<body class="back">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="p-4 p-sm-5">
+                <div style="margin-top: -20px; margin-left: -20px">
+                    <img src="assets/icon/arrow.svg" (click)="voltar()" width="30">
+                </div>
+                <h5 class="card-title text-center mb-5 fw-light fs-5" style="margin-top: 100px; font-weight: bold!important;">
+
+                    Insira suas informações <br>
+                    para realizar o login
+                </h5>
+                <form [formGroup]="myControl">
+                    <div class="form-floating mb-3">
+                        <input formControlName="email" style="border: none" name="email" type="email"
+                               class="form-control" id="email"
+                               placeholder="name@example.com">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="password" name="password" style="border: none" type="password"
+                               class="form-control"
+                               id="senha" placeholder="password">
+                        <label for="senha">Senha</label>
+                    </div>
+                    <div class="d-grid" style="margin-top: 10px">
+                        <a>
+                            <button type="button" class="btn btn-dark col-12" (click)="Entrar()"
+                                    style="height: 61px">Enviar
+                            </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
