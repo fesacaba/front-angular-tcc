@@ -11,6 +11,6 @@ export class PessoaService{
     }
 
     public cadastrar(model: CadastroPessoaModel) {
-        return this.http.post(`http://localhost:8080/api/v1/pessoa`, model);
+        return this.http.post(`https://app-back-tcc.herokuapp.com/api/v1/pessoa`, model);
     }
 }
