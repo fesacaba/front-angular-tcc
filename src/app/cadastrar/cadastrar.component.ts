@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 import {CadastroPessoaModel} from "../../service/model/cadastro-pessoa.model";
 import {DatePipe} from "@angular/common";
+import {PessoaService} from "../../service/pessoa.service";
 
 @Component({
     selector: 'app-cadastrar',
@@ -20,6 +21,7 @@ export class CadastrarComponent implements OnInit {
     });
 
     constructor(
+        private service: PessoaService,
         private router: Router
     ) {
     }
@@ -27,16 +29,31 @@ export class CadastrarComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    salvar() {
-
-
-    }
 
     voltar() {
         this.router.navigate([''])
     }
 
     enviar() {
+        // @ts-ignore
+        const nome = this.myControl.get('nome').value;
+        // @ts-ignore
+        const email = this.myControl.get('email').value;
+        // @ts-ignore
+        const phone = this.myControl.get('phone').value;
+        // @ts-ignore
+        const password = this.myControl.get('password').value;
+        // @ts-ignore
+        const rePassword = this.myControl.get('rePassword').value;
 
+        const pessoa = new CadastroPessoaModel(nome, email, phone, password);
+        console.log(pessoa);
+        if (password != rePassword) {
+            alert('Senhas diferentes');
+        } else {
+            this.service.cadastrar(pessoa).subscribe(
+                c => this.router.navigate([''])
+            );
+        }
     }
 }
