@@ -8,6 +8,9 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
+  now = new Date().toLocaleString();
+
+
   constructor(
       private router: Router
   ) { }
@@ -15,24 +18,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-  refeicao() {
-    this.router.navigate(['refeicao'])
-  }
-
-  peso() {
-    this.router.navigate(['peso'])
-  }
-
-  atividadeFisica() {
-    this.router.navigate(['atividade-fisica'])
-  }
-
-  pressao() {
-    this.router.navigate(['pressao'])
-  }
-
-  logout() {
-    this.router.navigate([''])
-  }
 }
