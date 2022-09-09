@@ -5,8 +5,8 @@ import {AuthModel} from "./model/auth.model";
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
-    // basePath: string = 'https://app-back-tcc.herokuapp.com';
-    basePath: string = 'http://localhost:8080';
+    basePath: string = 'https://app-back-tcc.herokuapp.com';
+    // basePath: string = 'http://localhost:8080';
 
     constructor(
         public http: HttpClient
