@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
     events: EventsResponse[] = [];
     // @ts-ignore
     valorTotal: number;
+    // @ts-ignore
+    nome: string;
 
     constructor(
         private service: EventService
@@ -22,6 +24,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
         this.findEvents();
+        this.findName();
     }
 
     findEvents() {
@@ -37,5 +40,10 @@ export class HomeComponent implements OnInit {
             });
 
         })
+    }
+
+    private findName() {
+        // @ts-ignore
+        this.nome = localStorage.getItem('nome');
     }
 }

@@ -37,8 +37,7 @@ export class LogarComponent {
             c => {
                 console.log(c)
                 this.router.navigate(['home']);
-                // @ts-ignore
-                localStorage.setItem('cpf', c.cpf);
+                localStorage.setItem('nome', c.nome);
             }
             ,
             err => {
